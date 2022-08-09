@@ -3,25 +3,25 @@
  * print_hex - prints a number in hexidecimal form
  * @n: unsigned int param
  * @c: flag
- * Return: 
+ * Return: counter
  */
 int print_hex(unsigned int n, unsigned int c)
 {
 	unsigned int a[8];
-	unsigned int i, j, sum;
+	unsigned int i, m, sum;
 	char diff;
 	int counter;
 
-	j = 268435456;
+	m = 268435456;
 	if (c)
 		diff = 'A' - ':';
 	else
 		diff = 'a' - ':';
-	a[0] = n / j;
+	a[0] = n / m;
 	for (i = 1; i < 8; i++)
 	{
-		j /= 16;
-		a[i] = (n / j) % 16;
+		m /= 16;
+		a[i] = (n / m) % 16;
 	}
 	for (i = 0, sum = 0, counter = 0; i < 8; i++)
 	{
@@ -49,7 +49,7 @@ int print_x(va_list x)
 /**
  * print_X - prints an X specifier
  * @X: unsigned int param
- * Return: number of digits printed
+ * Return: counter
  */
 int print_X(va_list X)
 {

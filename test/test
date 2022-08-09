@@ -1,5 +1,5 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdarg.h>
 
@@ -15,6 +15,7 @@ typedef struct print
 } print_t;
 
 int _putchar(char c);
+int print_hex(unsigned int n, unsigned int c);
 int _printf(const char *format, ...);
 int print_c(va_list c);
 int print_s(va_list s);
