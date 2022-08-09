@@ -29,5 +29,7 @@ int print_x(va_list x);
 int print_X(va_list X);
 int print_p(va_list p);
 int print_R(va_list R);
+int print_hex(unsigned int n, unsigned int c);
+
 
 #endif

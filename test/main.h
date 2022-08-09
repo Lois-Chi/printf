@@ -15,7 +15,10 @@ typedef struct print
 } print_t;
 
 int _putchar(char c);
+<<<<<<< HEAD
 int print_hex(unsigned int n, unsigned int c);
+=======
+>>>>>>> 802741256ac5989baa91ee204db548fa2fa95c52
 int _printf(const char *format, ...);
 int print_c(va_list c);
 int print_s(va_list s);
@@ -30,5 +33,10 @@ int print_x(va_list x);
 int print_X(va_list X);
 int print_p(va_list p);
 int print_R(va_list R);
+<<<<<<< HEAD
+=======
+int print_hex(unsigned int n, unsigned int c);
+
+>>>>>>> 802741256ac5989baa91ee204db548fa2fa95c52
 
 #endif

@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_hex - prints a number in hexidecimal form
  * @n: unsigned int param
@@ -12,7 +13,7 @@ int print_hex(unsigned int n, unsigned int c)
 	char diff;
 	int counter;
 
-	m = 268435456;
+	m = 268435456; /* (16 ^ 7) */
 	if (c)
 		diff = 'A' - ':';
 	else
@@ -38,7 +39,7 @@ int print_hex(unsigned int n, unsigned int c)
 	return (counter);
 }
 /**
- * print_x - prints an x specifier
+ * print_x - prints it in lowercase hex notation
  * @x: unsigned int param
  * Return: counter
  */
@@ -55,10 +56,11 @@ int print_X(va_list X)
 {
 	return (print_hex(va_arg(X, unsigned int), 1));
 }
+
 /**
  * _pow - calculates an exponent
- * @base: base param
- * @exponent: exponent param
+ * @base: base of exponent
+ * @exponent: exponent of number
  * Return: base ^ exponent
  */
 static unsigned long _pow(unsigned int base, unsigned int exponent)
@@ -72,10 +74,11 @@ static unsigned long _pow(unsigned int base, unsigned int exponent)
 	}
 	return (ans);
 }
+
 /**
  * print_p - prints an address
- * @p: address param
- * Return: counter
+ * @p: address to print
+ * Return: number of characters to print
  */
 int print_p(va_list p)
 {
