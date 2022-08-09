@@ -1,27 +1,29 @@
 #include "main.h"
+
 /**
- * print_hex - prints a number in hexidecimal form
- * @n: unsigned int param
- * @c: flag
- * Return: 
+ * print_hex - prints an unsigned int in hexidecimal form
+ * @n: unsigned int to print
+ * @c: flag to determine case of printing (0 = lower, 1 = upper)
+ *
+ * Return: number of digits printed
  */
 int print_hex(unsigned int n, unsigned int c)
 {
 	unsigned int a[8];
-	unsigned int i, j, sum;
+	unsigned int i, m, sum;
 	char diff;
 	int counter;
 
-	j = 268435456;
+	m = 268435456; /* (16 ^ 7) */
 	if (c)
 		diff = 'A' - ':';
 	else
 		diff = 'a' - ':';
-	a[0] = n / j;
+	a[0] = n / m;
 	for (i = 1; i < 8; i++)
 	{
-		j /= 16;
-		a[i] = (n / j) % 16;
+		m /= 16;
+		a[i] = (n / m) % 16;
 	}
 	for (i = 0, sum = 0, counter = 0; i < 8; i++)
 	{
@@ -38,27 +40,32 @@ int print_hex(unsigned int n, unsigned int c)
 	return (counter);
 }
 /**
- * print_x - prints an x specifier
- * @x: unsigned int param
- * Return: counter
+ * print_x - takes an unsigned int and prints it in lowercase hex notation
+ * @x: unsigned int to print
+ *
+ * Return: number of digits printed
  */
 int print_x(va_list x)
 {
 	return (print_hex(va_arg(x, unsigned int), 0));
 }
+
 /**
- * print_X - prints an X specifier
- * @X: unsigned int param
+ * print_X - takes am unsigned int and prints it in uppercase hex notation
+ * @X: unsigned int to print
+ *
  * Return: number of digits printed
  */
 int print_X(va_list X)
 {
 	return (print_hex(va_arg(X, unsigned int), 1));
 }
+
 /**
  * _pow - calculates an exponent
- * @base: base param
- * @exponent: exponent param
+ * @base: base of exponent
+ * @exponent: exponent of number
+ *
  * Return: base ^ exponent
  */
 static unsigned long _pow(unsigned int base, unsigned int exponent)
@@ -68,14 +75,16 @@ static unsigned long _pow(unsigned int base, unsigned int exponent)
 
 	for (i = 1; i < exponent; i++)
 	{
-		j *= base;
+		ans *= base;
 	}
 	return (ans);
 }
+
 /**
  * print_p - prints an address
- * @p: address param
- * Return: counter
+ * @p: address to print
+ *
+ * Return: number of characters to print
  */
 int print_p(va_list p)
 {
