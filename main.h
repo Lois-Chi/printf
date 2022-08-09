@@ -13,6 +13,8 @@ typedef struct print
 	char *t;
 	int (*f)(va_list);
 } print_t;
+int print_hex(unsigned int n, unsigned int c);
+static unsigned long _pow(unsigned int base, unsigned int exponent);
 
 int _putchar(char c);
 int _printf(const char *format, ...);

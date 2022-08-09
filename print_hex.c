@@ -68,7 +68,7 @@ static unsigned long _pow(unsigned int base, unsigned int exponent)
 
 	for (i = 1; i < exponent; i++)
 	{
-		j *= base;
+		ans *= base;
 	}
 	return (ans);
 }
