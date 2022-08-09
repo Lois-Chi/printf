@@ -15,7 +15,7 @@ typedef struct print
 } print_t;
 int print_hex(unsigned int n, unsigned int c);
 static unsigned long _pow(unsigned int base, unsigned int exponent);
-
+int _pow(int n);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_c(va_list c);
